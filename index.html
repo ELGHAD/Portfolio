@@ -33,8 +33,7 @@
         <span class="badge">Salé, Maroc · Stage PFE 2026</span>
         <h1>Full-stack & Cloud-native — je conçois des applis fiables et scalables.</h1>
         <p class="lead">
-          Dernière année à l’<strong>EMSI Rabat</strong> (MIAGE). Passionné par les architectures modernes, 
-          l’automatisation et la livraison de valeur. Ouvert aux opportunités de <strong>stage PFE (févr.–juin 2026)</strong> avec pré-embauche.
+          Un ingénieur logiciel passionné spécialisé dans le développement web, créant des solutions innovantes et performantes.
         </p>
         <div class="cta">
           <a class="btn primary" href="#projets">Voir mes projets</a>
@@ -71,72 +70,40 @@
       </article>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projets">
-      <h2>Projets sélectionnés</h2>
-      <div class="cards">
-        <article class="card project">
-          <img src="assets/img/projects/e-market-hub.png" alt="" class="project-cover" />
-          <h3>E-Market Hub</h3>
-          <p>Application e-commerce full-stack avec gestion produits, auth sécurisée et CI/CD cloud.</p>
-          <div class="skills">
-            <span class="skill">Spring Boot</span><span class="skill">React</span>
-            <span class="skill">MySQL</span><span class="skill">Déploiement Cloud</span>
-          </div>
-        </article>
+<!-- PROJECTS -->
+<section id="projets">
+  <h2>Projets sélectionnés</h2>
 
-        <article class="card project">
-          <img src="assets/img/projects/ai-chatbot.png" alt="" class="project-cover" />
-          <h3>AI Chatbot</h3>
-          <p>Assistant conversationnel moderne basé sur API OpenAI, interface responsive.</p>
-          <div class="skills">
-            <span class="skill">React</span><span class="skill">OpenAI API</span>
-          </div>
-        </article>
+  <!-- Filter bar -->
+  <div class="filterbar card">
+    <input id="searchInput" type="search" placeholder="Rechercher par titre, techno..." aria-label="Rechercher des projets">
+    <select id="techSelect" aria-label="Filtrer par techno">
+      <option value="">Toutes les technos</option>
+      <option>Java</option>
+      <option>Python</option>
+      <option>PHP</option>
+      <option>JavaScript</option>
+      <option>Spring Boot</option>
+      <option>React</option>
+      <option>Django</option>
+      <option>Laravel</option>
+      <option>MySQL</option>
+      <option>Azure</option>
+      <option>OpenAI API</option>
+    </select>
+    <select id="yearSelect" aria-label="Filtrer par année">
+      <option value="">Toutes les années</option>
+      <option>2026</option>
+      <option>2025</option>
+      <option>2024</option>
+      <option>2023</option>
+    </select>
+    <button id="clearFilters" class="btn">Réinitialiser</button>
+  </div>
 
-        <article class="card project">
-          <img src="assets/img/projects/prof-task-manager.png" alt="" class="project-cover" />
-          <h3>ProfTaskManager</h3>
-          <p>Gestion des tâches pour enseignants : authentification, suivi temps réel, UI responsive.</p>
-          <div class="skills">
-            <span class="skill">Python</span><span class="skill">Django</span>
-            <span class="skill">MySQL</span><span class="skill">HTML/CSS</span>
-          </div>
-        </article>
-
-        <article class="card project">
-          <img src="assets/img/projects/emsi-portal.png" alt="" class="project-cover" />
-          <h3>Portail Association EMSI</h3>
-          <p>Clubs, événements, actualités, tableaux de bord & accès par rôles.</p>
-          <div class="skills">
-            <span class="skill">Laravel</span><span class="skill">JavaScript</span><span class="skill">MySQL</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <h2>Expérience</h2>
-      <div class="timeline">
-        <div class="t-item">
-          <div class="t-meta"><strong>RATITEC — Plateforme Énergie Renouvelable</strong> • Mohammedia • juil. 2025 – août 2025</div>
-          <ul>
-            <li>Gestion de projets en temps réel : suivi chantiers, planification techniciens.</li>
-            <li>Intégration d’API REST & dashboards KPI (meilleur suivi, retards réduits).</li>
-          </ul>
-          <div class="chips"><span class="chip">Laravel</span><span class="chip">React</span><span class="chip">MySQL</span></div>
-        </div>
-        <div class="t-item">
-          <div class="t-meta"><strong>ALTEN — Application de Gestion de Tâches</strong> • Fès • août 2024 – sept. 2024</div>
-          <ul>
-            <li>RBAC, suivi en temps réel, UI responsive.</li>
-            <li>Optimisation SQL & UX pour la productivité.</li>
-          </ul>
-          <div class="chips"><span class="chip">Symfony</span><span class="chip">JavaScript</span><span class="chip">MySQL</span></div>
-        </div>
-      </div>
-    </section>
+  <!-- Grid container (rendered by JS) -->
+  <div id="projectGrid" class="cards"></div>
+</section>
 
     <!-- SKILLS -->
     <section id="skills">
@@ -181,7 +148,6 @@
         <p>Disponible pour un stage PFE (févr.–juin 2026) avec possibilité de pré-embauche.</p>
         <div class="row">
           <a class="btn" href="mailto:hamelrhadiouini@gmail.com">✉️ Email</a>
-          <a class="btn" href="tel:+212771402945">📱 Téléphone</a>
           <a class="btn" href="https://linkedin.com/in/elrhadiouini-hamza" target="_blank" rel="noopener">in LinkedIn</a>
           <a class="btn" href="https://github.com/ELGHAD" target="_blank" rel="noopener"> GitHub</a>
         </div>
@@ -195,6 +161,8 @@
     </div>
   </footer>
 
+
+  <script src="assets/js/projects.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
