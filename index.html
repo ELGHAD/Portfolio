@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hamza ELRHADIOUINI — Portfolio</title>
+  <meta name="description" content="Portfolio de Hamza ELRHADIOUINI — Étudiant ingénieur MIAGE, développement full-stack & cloud.">
+  <link rel="icon" href="assets/icons/favicon.ico">
+  <link rel="preload" as="image" href="assets/img/profile.jpg">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <nav class="nav">
+        <a href="#" class="brand">Hamza&nbsp;ELRHADIOUINI</a>
+        <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+        <div class="nav-links" id="navLinks">
+          <a href="#projets" class="btn">Projets</a>
+          <a href="#experience" class="btn">Expérience</a>
+          <a href="#skills" class="btn">Compétences</a>
+          <a href="#contact" class="btn">Contact</a>
+          <button class="btn theme" id="themeToggle" title="Basculer thème">🌓</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero" id="about">
+      <div>
+        <span class="badge">Salé, Maroc · Stage PFE 2026</span>
+        <h1>Full-stack & Cloud-native — je conçois des applis fiables et scalables.</h1>
+        <p class="lead">
+          Dernière année à l’<strong>EMSI Rabat</strong> (MIAGE). Passionné par les architectures modernes, 
+          l’automatisation et la livraison de valeur. Ouvert aux opportunités de <strong>stage PFE (févr.–juin 2026)</strong> avec pré-embauche.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#projets">Voir mes projets</a>
+          <a class="btn" href="assets/pdf/Hamza_Elrhadiouini_CV.pdf" target="_blank" rel="noopener">Voir mon CV</a>
+        </div>
+      </div>
+      <figure class="avatar-card">
+        <img src="assets/img/profile.jpg" alt="Photo de Hamza ELRHADIOUINI" />
+        <figcaption>Ingénierie logicielle · MIAGE</figcaption>
+      </figure>
+    </section>
+
+    <!-- QUICK INFO -->
+    <section class="grid-2">
+      <article class="card">
+        <h2>Profil rapide</h2>
+        <p class="muted">Java · Python · PHP · JavaScript · SQL — Spring Boot, React, Laravel, Symfony, Django · Docker · Azure</p>
+        <div class="chips">
+          <span class="chip">Agile (Scrum)</span>
+          <span class="chip">UML & Design Patterns</span>
+          <span class="chip">MVC</span>
+        </div>
+      </article>
+      <article class="card">
+        <h2>Certifications</h2>
+        <div class="chips">
+          <span class="chip">Oracle 19c OCP</span>
+          <span class="chip">Meta Front-End</span>
+          <span class="chip">Meta Back-End</span>
+          <span class="chip">IBM Java Dev</span>
+          <span class="chip">Azure VNet</span>
+          <span class="chip">Docker/K8s/OpenShift</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projets">
+      <h2>Projets sélectionnés</h2>
+      <div class="cards">
+        <article class="card project">
+          <img src="assets/img/projects/e-market-hub.png" alt="" class="project-cover" />
+          <h3>E-Market Hub</h3>
+          <p>Application e-commerce full-stack avec gestion produits, auth sécurisée et CI/CD cloud.</p>
+          <div class="skills">
+            <span class="skill">Spring Boot</span><span class="skill">React</span>
+            <span class="skill">MySQL</span><span class="skill">Déploiement Cloud</span>
+          </div>
+        </article>
+
+        <article class="card project">
+          <img src="assets/img/projects/ai-chatbot.png" alt="" class="project-cover" />
+          <h3>AI Chatbot</h3>
+          <p>Assistant conversationnel moderne basé sur API OpenAI, interface responsive.</p>
+          <div class="skills">
+            <span class="skill">React</span><span class="skill">OpenAI API</span>
+          </div>
+        </article>
+
+        <article class="card project">
+          <img src="assets/img/projects/prof-task-manager.png" alt="" class="project-cover" />
+          <h3>ProfTaskManager</h3>
+          <p>Gestion des tâches pour enseignants : authentification, suivi temps réel, UI responsive.</p>
+          <div class="skills">
+            <span class="skill">Python</span><span class="skill">Django</span>
+            <span class="skill">MySQL</span><span class="skill">HTML/CSS</span>
+          </div>
+        </article>
+
+        <article class="card project">
+          <img src="assets/img/projects/emsi-portal.png" alt="" class="project-cover" />
+          <h3>Portail Association EMSI</h3>
+          <p>Clubs, événements, actualités, tableaux de bord & accès par rôles.</p>
+          <div class="skills">
+            <span class="skill">Laravel</span><span class="skill">JavaScript</span><span class="skill">MySQL</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2>Expérience</h2>
+      <div class="timeline">
+        <div class="t-item">
+          <div class="t-meta"><strong>RATITEC — Plateforme Énergie Renouvelable</strong> • Mohammedia • juil. 2025 – août 2025</div>
+          <ul>
+            <li>Gestion de projets en temps réel : suivi chantiers, planification techniciens.</li>
+            <li>Intégration d’API REST & dashboards KPI (meilleur suivi, retards réduits).</li>
+          </ul>
+          <div class="chips"><span class="chip">Laravel</span><span class="chip">React</span><span class="chip">MySQL</span></div>
+        </div>
+        <div class="t-item">
+          <div class="t-meta"><strong>ALTEN — Application de Gestion de Tâches</strong> • Fès • août 2024 – sept. 2024</div>
+          <ul>
+            <li>RBAC, suivi en temps réel, UI responsive.</li>
+            <li>Optimisation SQL & UX pour la productivité.</li>
+          </ul>
+          <div class="chips"><span class="chip">Symfony</span><span class="chip">JavaScript</span><span class="chip">MySQL</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2>Compétences techniques</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>Langages & Frameworks</h3>
+          <div class="skills">
+            <span class="skill">Java</span><span class="skill">Python</span><span class="skill">PHP</span>
+            <span class="skill">JavaScript (ES6+)</span><span class="skill">SQL</span><span class="skill">C#</span><span class="skill">C++</span>
+            <span class="skill">Spring Boot</span><span class="skill">React</span><span class="skill">Laravel</span>
+            <span class="skill">Symfony</span><span class="skill">Django</span><span class="skill">.NET</span><span class="skill">Swing</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Data, Outils & Méthodo</h3>
+          <div class="skills">
+            <span class="skill">MySQL</span><span class="skill">Oracle DB</span><span class="skill">MongoDB</span>
+            <span class="skill">Git/GitHub</span><span class="skill">Docker</span><span class="skill">Azure</span>
+            <span class="skill">MVC</span><span class="skill">UML</span><span class="skill">Design Patterns</span><span class="skill">Agile (Scrum)</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- LANGUAGES / INTERESTS -->
+    <section class="grid-2">
+      <article class="card">
+        <h3>Langues</h3>
+        <p>Arabe (native), Français (courant), Anglais (courant)</p>
+      </article>
+      <article class="card">
+        <h3>Centres d’intérêt</h3>
+        <p>Nouvelles technologies, design & art numérique, photographie, lecture, musique, culture, sport, voyage.</p>
+      </article>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <article class="card contact">
+        <p>Disponible pour un stage PFE (févr.–juin 2026) avec possibilité de pré-embauche.</p>
+        <div class="row">
+          <a class="btn" href="mailto:hamelrhadiouini@gmail.com">✉️ Email</a>
+          <a class="btn" href="tel:+212771402945">📱 Téléphone</a>
+          <a class="btn" href="https://linkedin.com/in/elrhadiouini-hamza" target="_blank" rel="noopener">in LinkedIn</a>
+          <a class="btn" href="https://github.com/ELGHAD" target="_blank" rel="noopener"> GitHub</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="muted">© <span id="year"></span> Hamza ELRHADIOUINI. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
