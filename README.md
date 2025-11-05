@@ -23,25 +23,6 @@ Ce dépôt contient une page web statique (HTML/CSS/JS) pour présenter des proj
 
 Le site est un site statique, aucun backend n'est requis.
 
-## Ouvrir localement
-
-La méthode la plus simple est d'ouvrir `index.html` directement dans un navigateur. Pour un serveur local (recommandé pour tests de routage ou CORS) :
-
-PowerShell (Windows):
-
-```powershell
-# depuis le répertoire du projet
-python -m http.server 8000
-# puis ouvrir http://localhost:8000
-```
-
-Ou avec Node.js (si installé):
-
-```powershell
-# installer http-server globalement si besoin
-npm install -g http-server
-# puis
-http-server -p 8000
 ```
 
 ## Personnalisation
