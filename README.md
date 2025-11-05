@@ -29,8 +29,6 @@ Le site est un site statique, aucun backend n'est requis.
 - Remplacez `assets/img/profile.jpg.PNG` par votre photo (ou corrigez le nom si nécessaire).
 - Mettez à jour `assets/pdf/Hamza_Elrhadiouini_CV.pdf` si vous changez le CV.
 
-## Licence
-Contenu: choisissez une licence si vous voulez partager ce projet publiquement (ex: MIT).
 
 ## Contact
 - Email: hamelrhadiouini@gmail.com
