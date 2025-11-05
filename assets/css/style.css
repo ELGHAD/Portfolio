@@ -109,3 +109,28 @@ section > h2{font-size:1.35rem;margin:0 0 10px}
 @media (max-width: 860px) {
   .filterbar { grid-template-columns: 1fr; }
 }
+/* === Category tabs (segmented control) === */
+.tabs {
+  display: inline-flex;
+  gap: 6px;
+  padding: 6px;
+  border-radius: 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+.tab {
+  border: 1px solid var(--border);
+  background: var(--chip);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.tab.active {
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: #fff;
+  border-color: transparent;
+}
+
+/* (déjà ajouté précédemment) filterbar + project cards responsive */

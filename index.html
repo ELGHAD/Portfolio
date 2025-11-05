@@ -17,7 +17,8 @@
         <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
         <div class="nav-links" id="navLinks">
           <a href="#projets" class="btn">Projets</a>
-          <a href="#experience" class="btn">Expérience</a>
+          <a class="btn" href="#certifications">Certifications</a>
+
           <a href="#skills" class="btn">Compétences</a>
           <a href="#contact" class="btn">Contact</a>
           <button class="btn theme" id="themeToggle" title="Basculer thème">🌓</button>
@@ -50,53 +51,39 @@
     <section class="grid-2">
       <article class="card">
         <h2>Profil rapide</h2>
-        <p class="muted">Java · Python · PHP · JavaScript · SQL — Spring Boot, React, Laravel, Symfony, Django · Docker · Azure</p>
-        <div class="chips">
-          <span class="chip">Agile (Scrum)</span>
-          <span class="chip">UML & Design Patterns</span>
-          <span class="chip">MVC</span>
-        </div>
+        <p class="muted">Étudiant en dernière année d’ingénierie en informatique et réseaux (option MIAGE) à l’EMSI Rabat, passionné
+par le développement full-stack et les architectures cloud-native. Solides compétences analytiques et esprit
+d’équipe, avec une capacité prouvée à concevoir des systèmes évolutifs et à livrer des solutions orientées valeur.
+Actuellement à la recherche d’un stage PFE 2026 avec une opportunité de pré-embauche afin de contribuer
+à des projets logiciels innovants.</p>
+        
       </article>
-      <article class="card">
-        <h2>Certifications</h2>
-        <div class="chips">
-          <span class="chip">Oracle 19c OCP</span>
-          <span class="chip">Meta Front-End</span>
-          <span class="chip">Meta Back-End</span>
-          <span class="chip">IBM Java Dev</span>
-          <span class="chip">Azure VNet</span>
-          <span class="chip">Docker/K8s/OpenShift</span>
-        </div>
-      </article>
+      
     </section>
 
 <!-- PROJECTS -->
 <section id="projets">
-  <h2>Projets sélectionnés</h2>
+  <h2>Projets</h2>
+
+  <!-- Category segmented control -->
+  <div class="tabs card" role="tablist" aria-label="Catégories de projets">
+    <button class="tab active" data-category="" role="tab" aria-selected="true">Tous</button>
+    <button class="tab" data-category="professionnel" role="tab" aria-selected="false">Professionnels</button>
+    <button class="tab" data-category="personnel" role="tab" aria-selected="false">Personnels</button>
+  </div>
 
   <!-- Filter bar -->
   <div class="filterbar card">
     <input id="searchInput" type="search" placeholder="Rechercher par titre, techno..." aria-label="Rechercher des projets">
     <select id="techSelect" aria-label="Filtrer par techno">
       <option value="">Toutes les technos</option>
-      <option>Java</option>
-      <option>Python</option>
-      <option>PHP</option>
-      <option>JavaScript</option>
-      <option>Spring Boot</option>
-      <option>React</option>
-      <option>Django</option>
-      <option>Laravel</option>
-      <option>MySQL</option>
-      <option>Azure</option>
-      <option>OpenAI API</option>
+      <option>Java</option><option>Python</option><option>PHP</option><option>JavaScript</option>
+      <option>Spring Boot</option><option>React</option><option>Django</option><option>Laravel</option>
+      <option>MySQL</option><option>Azure</option><option>OpenAI API</option>
     </select>
     <select id="yearSelect" aria-label="Filtrer par année">
       <option value="">Toutes les années</option>
-      <option>2026</option>
-      <option>2025</option>
-      <option>2024</option>
-      <option>2023</option>
+      <option>2026</option><option>2025</option><option>2024</option><option>2023</option>
     </select>
     <button id="clearFilters" class="btn">Réinitialiser</button>
   </div>
@@ -104,6 +91,7 @@
   <!-- Grid container (rendered by JS) -->
   <div id="projectGrid" class="cards"></div>
 </section>
+
 
     <!-- SKILLS -->
     <section id="skills">

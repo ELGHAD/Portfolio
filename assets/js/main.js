@@ -1,9 +1,9 @@
-// Theme toggle (light/dark) + persist preference
+// === Thème & navigation (inchangé) ===
 const root = document.documentElement;
 const toggle = document.getElementById("themeToggle");
 const saved = localStorage.getItem("theme");
 if (saved === "light") root.classList.add("light");
-if (toggle) {
+if (toggle)
   toggle.addEventListener("click", () => {
     root.classList.toggle("light");
     localStorage.setItem(
@@ -11,9 +11,6 @@ if (toggle) {
       root.classList.contains("light") ? "light" : "dark"
     );
   });
-}
-
-// Mobile nav toggle
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.getElementById("navLinks");
 if (navToggle && navLinks) {
@@ -23,8 +20,6 @@ if (navToggle && navLinks) {
     navLinks.classList.toggle("open");
   });
 }
-
-// Smooth scroll for internal links
 document.querySelectorAll('a[href^="#"]').forEach((a) => {
   a.addEventListener("click", (e) => {
     const id = a.getAttribute("href");
@@ -40,25 +35,17 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
     }
   });
 });
-
-// Dynamic year in footer
 document.getElementById("year").textContent = new Date().getFullYear();
 
-/* ===============================
-   Projects rendering + filters
-=================================*/
-const state = {
-  search: "",
-  tech: "",
-  year: "",
-};
-
+// === Projets : état + éléments ===
+const state = { search: "", tech: "", year: "", category: "" };
 const els = {
   grid: document.getElementById("projectGrid"),
   search: document.getElementById("searchInput"),
   tech: document.getElementById("techSelect"),
   year: document.getElementById("yearSelect"),
   clear: document.getElementById("clearFilters"),
+  tabs: document.querySelectorAll(".tabs .tab"),
 };
 
 function normalize(s) {
@@ -70,18 +57,27 @@ function normalize(s) {
 }
 
 function matchProject(p) {
+  // Catégorie ('' = toutes)
+  const catOK =
+    !state.category || normalize(p.category) === normalize(state.category);
+
+  // Texte libre
   const s = normalize(state.search);
   const inText =
+    !s ||
     normalize(p.title).includes(s) ||
     normalize(p.description).includes(s) ||
     (p.tech || []).some((t) => normalize(t).includes(s));
 
+  // Tech exacte (si sélectionnée)
   const techOk =
     !state.tech ||
     (p.tech || []).some((t) => normalize(t) === normalize(state.tech));
+
+  // Année (égalité simple)
   const yearOk = !state.year || String(p.year) === String(state.year);
 
-  return inText && techOk && yearOk;
+  return catOK && inText && techOk && yearOk;
 }
 
 function projectCard(p) {
@@ -97,12 +93,17 @@ function projectCard(p) {
   const caseBtn = p.links?.caseStudy
     ? `<a class="btn" href="${p.links.caseStudy}">Case Study</a>`
     : "";
+  const catLabel =
+    p.category === "professionnel" ? "Professionnel" : "Personnel";
 
   return `
     <article class="card project">
       ${p.image ? `<img src="${p.image}" alt="" class="project-cover" />` : ""}
       <h3>${p.title}</h3>
       <p>${p.description}</p>
+      <div class="chips" style="margin-top:6px">
+        <span class="chip">${catLabel}</span>
+      </div>
       <div class="skills">${techChips}</div>
       <div class="actions">${demoBtn}${repoBtn}${caseBtn}</div>
     </article>
@@ -118,34 +119,43 @@ function renderProjects() {
 }
 
 function bindFilters() {
-  if (els.search)
-    els.search.addEventListener("input", () => {
-      state.search = els.search.value;
+  els.search?.addEventListener("input", () => {
+    state.search = els.search.value;
+    renderProjects();
+  });
+  els.tech?.addEventListener("change", () => {
+    state.tech = els.tech.value;
+    renderProjects();
+  });
+  els.year?.addEventListener("change", () => {
+    state.year = els.year.value;
+    renderProjects();
+  });
+  els.clear?.addEventListener("click", () => {
+    state.search = "";
+    state.tech = "";
+    state.year = "";
+    if (els.search) els.search.value = "";
+    if (els.tech) els.tech.value = "";
+    if (els.year) els.year.value = "";
+    renderProjects();
+  });
+
+  // Tabs Catégorie
+  els.tabs.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      els.tabs.forEach((b) => {
+        b.classList.remove("active");
+        b.setAttribute("aria-selected", "false");
+      });
+      btn.classList.add("active");
+      btn.setAttribute("aria-selected", "true");
+      state.category = btn.dataset.category || "";
       renderProjects();
     });
-  if (els.tech)
-    els.tech.addEventListener("change", () => {
-      state.tech = els.tech.value;
-      renderProjects();
-    });
-  if (els.year)
-    els.year.addEventListener("change", () => {
-      state.year = els.year.value;
-      renderProjects();
-    });
-  if (els.clear)
-    els.clear.addEventListener("click", () => {
-      state.search = "";
-      state.tech = "";
-      state.year = "";
-      if (els.search) els.search.value = "";
-      if (els.tech) els.tech.value = "";
-      if (els.year) els.year.value = "";
-      renderProjects();
-    });
+  });
 }
 
-// Init when DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
   bindFilters();
   renderProjects();
