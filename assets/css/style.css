@@ -133,4 +133,176 @@ section > h2{font-size:1.35rem;margin:0 0 10px}
   border-color: transparent;
 }
 
-/* (déjà ajouté précédemment) filterbar + project cards responsive */
+/* Certifications grid tweaks (reuses .cards/.card) */
+#certifications .card h3 { margin-bottom: 4px; }
+#certifications .muted { margin-bottom: 8px; display: block; }
+
+/* Make the cert filter bar align nicely like projects */
+#certifications .filterbar {
+  display: grid;
+  grid-template-columns: 1fr 220px auto;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+#certifications .filterbar input[type="search"],
+#certifications .filterbar select {
+  background: var(--chip);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  outline: none;
+}
+@media (max-width: 860px) {
+  #certifications .filterbar { grid-template-columns: 1fr; }
+}
+/* About & Skills layout */
+.edu-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:16px;
+  margin-bottom:10px;
+}
+.edu-card .edu-head{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.badge-square{
+  display:inline-grid;place-items:center;
+  width:42px;height:42px;border-radius:12px;
+  background:var(--chip);border:1px solid var(--border);
+  font-weight:700;font-size:1.05rem;color:var(--text);
+}
+.edu-title{margin:0}
+
+.skills-title{margin:18px 0 8px}
+
+/* 3-column grid like your screenshot; collapses on mobile */
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(280px,1fr));
+  gap:16px;margin-bottom:16px;
+}
+.skills-grid > .card:nth-child(3){grid-column:1}    /* Databases start new row */
+.skills-grid > .card:nth-child(4){grid-column:2}    /* Cloud next to it */
+.skills-grid > .card:nth-child(5){grid-column:1 / -1} /* Design full width */
+
+@media (min-width: 980px){
+  .skills-grid{grid-template-columns:repeat(3,minmax(280px,1fr))}
+  .skills-grid > .card:nth-child(1){grid-column:auto}
+  .skills-grid > .card:nth-child(2){grid-column:auto}
+  .skills-grid > .card:nth-child(3){grid-column:1}
+  .skills-grid > .card:nth-child(4){grid-column:2}
+  .skills-grid > .card:nth-child(5){grid-column:3}
+}
+
+/* Red angled headings like the light mock */
+.angle{
+  position:relative;margin:0 0 8px;font-weight:700;
+}
+.angle::after{
+  content:"";
+  position:absolute;left:0;right:0;bottom:-6px;height:1px;
+  background:linear-gradient(90deg,rgba(255,90,90,.45),transparent);
+}
+
+/* 3-column responsive grid */
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:16px;
+}
+
+/* Subhead inside technology card */
+.sub{margin:12px 0 6px;color:var(--muted);font-weight:600}
+
+/* Soft-skill chips wrap a bit tighter */
+.chips.soft .chip{margin-bottom:6px}
+
+/* Languages (human) list */
+.lang-list{margin:8px 0 0 18px}
+.lang-list li{margin:6px 0}
+
+/* === Contact hero (light & dark friendly) === */
+.contact-hero{
+  text-align:center;
+  padding:48px 0 38px;
+  position:relative;
+}
+.contact-title{
+  font-size:clamp(36px,6vw,64px);
+  line-height:1.05;
+  margin:0 0 10px;
+  font-weight:800;
+  letter-spacing:.2px;
+}
+.contact-title .accent{
+  background: linear-gradient(90deg, #ff6b6b, #ff3d3d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.contact-sub{
+  color: var(--muted);
+  font-size:clamp(16px,2.6vw,18px);
+  margin:0 auto 24px;
+  max-width: 850px;
+}
+
+/* Cards container */
+.contact-cards{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:18px;
+  align-items:stretch;
+  margin: 8px auto 22px;
+}
+
+/* Individual card (soft glow + rounded like screenshot) */
+.contact-card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 22px 20px;
+  box-shadow: 0 18px 45px rgba(255, 77, 77, .16), var(--shadow);
+}
+.contact-card h3{ margin: 8px 0 6px; font-size: 1.25rem; }
+.contact-card .muted{ margin: 0 0 12px; }
+
+/* Circular red icon */
+.contact-icon{
+  width:64px;height:64px;border-radius:50%;
+  margin: 0 auto 8px;
+  display:grid;place-items:center;
+  background: radial-gradient(100% 100% at 50% 0%, #ff6262 0%, #e73636 100%);
+  box-shadow: 0 10px 25px rgba(231,54,54,.35);
+}
+.contact-icon svg{ display:block }
+
+/* Link-styled CTA (red text + arrow) */
+.link-btn{
+  background: transparent;
+  border-color: transparent;
+  color: #ff4a4a;
+  font-weight: 700;
+  padding: 0;
+}
+.link-btn:hover{ text-decoration: underline; transform:none }
+
+/* Code pill footer */
+.contact-code-pill{
+  display:inline-block;
+  margin-top: 10px;
+  padding:10px 16px;
+  border-radius: 999px;
+  border:1px solid var(--border);
+  background: var(--chip);
+  color: var(--muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+/* Light theme tweaks */
+:root.light .contact-card{
+  background:#fff;
+  border-color:#f1f1f4;
+  box-shadow: 0 22px 60px rgba(255, 77, 77, .20);
+}
+:root.light .contact-code-pill{ background:#fff; }
+

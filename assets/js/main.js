@@ -160,3 +160,58 @@ document.addEventListener("DOMContentLoaded", () => {
   bindFilters();
   renderProjects();
 });
+
+/* ===============================
+   Certifications: render + filters
+=================================*/
+(function(){
+  const grid = document.getElementById('certGrid');
+  const search = document.getElementById('certSearch');
+  const provider = document.getElementById('providerSelect');
+  const clear = document.getElementById('clearCerts');
+  const DATA = (window.CERTS || []);
+
+  if (!grid) return;
+
+  const norm = s => (s||'').toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu,'');
+
+  const card = c => `
+    <article class="card cert" data-provider="${c.provider}">
+      <h3>${c.title}</h3>
+      <p class="muted">${c.provider}${c.grade ? ` — Note : ${c.grade}` : ""}</p>
+      <div class="row">
+        ${c.links?.verify ? `<a class="btn" href="${c.links.verify}" target="_blank" rel="noopener">Vérifier</a>` : ""}
+        ${c.links?.pdf ? `<a class="btn" href="${c.links.pdf}" target="_blank" rel="noopener">Voir PDF</a>` : ""}
+      </div>
+    </article>
+  `;
+
+  function render(list){
+    if (!list.length) {
+      grid.innerHTML = `<div class="card"><p class="muted">Aucune certification trouvée.</p></div>`;
+      return;
+    }
+    grid.innerHTML = list.map(card).join('');
+  }
+
+  function apply(){
+    const q = norm(search?.value || '');
+    const p = norm(provider?.value || '');
+
+    const filtered = DATA.filter(c => {
+      const t = norm(c.title);
+      const prov = norm(c.provider);
+      const matchText = !q || t.includes(q) || prov.includes(q);
+      const matchProv = !p || prov === p;
+      return matchText && matchProv;
+    });
+
+    render(filtered);
+  }
+
+  search?.addEventListener('input', apply);
+  provider?.addEventListener('change', apply);
+  clear?.addEventListener('click', () => { if (search) search.value=''; if (provider) provider.value=''; apply(); });
+
+  render(DATA); // initial
+})();

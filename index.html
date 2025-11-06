@@ -19,7 +19,7 @@
           <a href="#projets" class="btn">Projets</a>
           <a class="btn" href="#certifications">Certifications</a>
 
-          <a href="#skills" class="btn">Compétences</a>
+          <a href="#skills" class="btn">About</a>
           <a href="#contact" class="btn">Contact</a>
           <button class="btn theme" id="themeToggle" title="Basculer thème">🌓</button>
         </div>
@@ -50,7 +50,7 @@
     <!-- QUICK INFO -->
     <section class="grid-2">
       <article class="card">
-        <h2>Profil rapide</h2>
+        <h2>Profil</h2>
         <p class="muted">Étudiant en dernière année d’ingénierie en informatique et réseaux (option MIAGE) à l’EMSI Rabat, passionné
 par le développement full-stack et les architectures cloud-native. Solides compétences analytiques et esprit
 d’équipe, avec une capacité prouvée à concevoir des systèmes évolutifs et à livrer des solutions orientées valeur.
@@ -93,54 +93,184 @@ Actuellement à la recherche d’un stage PFE 2026 avec une opportunité de pré
 </section>
 
 
-    <!-- SKILLS -->
-    <section id="skills">
-      <h2>Compétences techniques</h2>
-      <div class="grid-2">
-        <article class="card">
-          <h3>Langages & Frameworks</h3>
-          <div class="skills">
-            <span class="skill">Java</span><span class="skill">Python</span><span class="skill">PHP</span>
-            <span class="skill">JavaScript (ES6+)</span><span class="skill">SQL</span><span class="skill">C#</span><span class="skill">C++</span>
-            <span class="skill">Spring Boot</span><span class="skill">React</span><span class="skill">Laravel</span>
-            <span class="skill">Symfony</span><span class="skill">Django</span><span class="skill">.NET</span><span class="skill">Swing</span>
-          </div>
-        </article>
-        <article class="card">
-          <h3>Data, Outils & Méthodo</h3>
-          <div class="skills">
-            <span class="skill">MySQL</span><span class="skill">Oracle DB</span><span class="skill">MongoDB</span>
-            <span class="skill">Git/GitHub</span><span class="skill">Docker</span><span class="skill">Azure</span>
-            <span class="skill">MVC</span><span class="skill">UML</span><span class="skill">Design Patterns</span><span class="skill">Agile (Scrum)</span>
-          </div>
-        </article>
-      </div>
-    </section>
 
-    <!-- LANGUAGES / INTERESTS -->
-    <section class="grid-2">
-      <article class="card">
-        <h3>Langues</h3>
-        <p>Arabe (native), Français (courant), Anglais (courant)</p>
-      </article>
-      <article class="card">
-        <h3>Centres d’intérêt</h3>
-        <p>Nouvelles technologies, design & art numérique, photographie, lecture, musique, culture, sport, voyage.</p>
-      </article>
-    </section>
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <h2>Certifications</h2>
 
-    <!-- CONTACT -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <article class="card contact">
-        <p>Disponible pour un stage PFE (févr.–juin 2026) avec possibilité de pré-embauche.</p>
-        <div class="row">
-          <a class="btn" href="mailto:hamelrhadiouini@gmail.com">✉️ Email</a>
-          <a class="btn" href="https://linkedin.com/in/elrhadiouini-hamza" target="_blank" rel="noopener">in LinkedIn</a>
-          <a class="btn" href="https://github.com/ELGHAD" target="_blank" rel="noopener"> GitHub</a>
+  <!-- Filter bar -->
+  <div class="filterbar card">
+    <input id="certSearch" type="search" placeholder="Rechercher (titre, organisme)..." aria-label="Rechercher des certifications">
+    <select id="providerSelect" aria-label="Filtrer par organisme">
+      <option value="">Tous les organismes</option>
+      <option>Meta</option><option>IBM</option><option>Oracle</option><option>Google</option>
+      <option>Whizlabs</option><option>University of Michigan</option><option>Johns Hopkins University</option>
+      <option>EPFL</option><option>UC Irvine</option><option>University of Pennsylvania</option>
+      <option>HKUST</option><option>Duke University</option><option>University of Colorado Boulder</option>
+      <option>École Polytechnique</option>
+    </select>
+    <button id="clearCerts" class="btn">Réinitialiser</button>
+  </div>
+
+  <!-- Grid rendered by JS -->
+  <div id="certGrid" class="cards"></div>
+</section>
+
+
+
+<!-- ABOUT & SKILLS -->
+<section id="skills">
+  <h2>Education</h2>
+
+  <!-- Education (two cards like your screenshot) -->
+  <div class="edu-grid">
+    <article class="card edu-card">
+      <div class="edu-head">
+        <span class="badge-square">E</span>
+        <div>
+          <h3 class="edu-title">EMSI Rabat</h3>
+          <p class="muted">Software Engineering (MIAGE)</p>
         </div>
-      </article>
-    </section>
+      </div>
+      <p class="muted">2021 – Present</p>
+    </article>
+
+    <article class="card edu-card">
+      <div class="edu-head">
+        <span class="badge-square">B</span>
+        <div>
+          <h3 class="edu-title">Baccalauréat</h3>
+          <p class="muted">Physical Sciences</p>
+        </div>
+      </div>
+      <p class="muted">2020</p>
+    </article>
+  </div>
+
+
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Skills</h2>
+
+  <div class="grid-3">
+    <!-- Technologies -->
+    <article class="card">
+      <h3>Technologies</h3>
+
+      <h4 class="sub">Languages</h4>
+      <div class="chips">
+        <span class="chip">Java</span><span class="chip">JavaScript</span><span class="chip">PHP</span>
+        <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">C#</span><span class="chip">C++</span>
+      </div>
+
+      <h4 class="sub">Frameworks</h4>
+      <div class="chips">
+        <span class="chip">Spring Boot</span><span class="chip">React</span>
+        <span class="chip">Laravel</span><span class="chip">Symfony</span>
+        <span class="chip">Django</span><span class="chip">.NET</span>
+      </div>
+
+      <h4 class="sub">Databases</h4>
+      <div class="chips">
+        <span class="chip">MySQL</span><span class="chip">Oracle</span><span class="chip">MongoDB</span>
+      </div>
+
+      <h4 class="sub">Cloud & Tools</h4>
+      <div class="chips">
+        <span class="chip">Git/GitHub</span><span class="chip">Azure</span><span class="chip">Docker</span>
+        <span class="chip">CI/CD</span>
+      </div>
+
+      <h4 class="sub">Design & Methods</h4>
+      <div class="chips">
+        <span class="chip">UML</span><span class="chip">MVC</span>
+        <span class="chip">Design Patterns</span><span class="chip">Agile (Scrum)</span>
+      </div>
+    </article>
+
+    <!-- Soft Skills -->
+    <article class="card">
+      <h3>Soft Skills</h3>
+      <div class="chips soft">
+        <span class="chip">Problem-solving</span>
+        <span class="chip">Communication</span>
+        <span class="chip">Teamwork</span>
+        <span class="chip">Time management</span>
+        <span class="chip">Adaptability</span>
+        <span class="chip">Attention to detail</span>
+        <span class="chip">Critical thinking</span>
+        <span class="chip">Curiosity & learning</span>
+        <span class="chip">Documentation</span>
+        <span class="chip">Client focus</span>
+      </div>
+    </article>
+
+    <!-- Languages (human) -->
+    <article class="card">
+      <h3>Languages</h3>
+      <ul class="lang-list">
+        <li><strong>Arabic</strong> — native</li>
+        <li><strong>French</strong> — fluent</li>
+        <li><strong>English</strong> — fluent</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+
+
+
+        
+  <!-- CONTACT -->
+<section id="contact" class="contact-hero">
+  <h2 class="contact-title">
+    Let’s <span class="accent">Work</span> Together
+  </h2>
+  <p class="contact-sub">
+    I’m currently seeking opportunities for my final-year internship (PFE).<br>
+    Feel free to reach out if you'd like to collaborate or have any questions.
+  </p>
+
+  <div class="contact-cards">
+    <!-- Email card -->
+    <article class="contact-card">
+      <div class="contact-icon">
+        <!-- Envelope icon -->
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 6h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zm0 0l8 6 8-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>Email</h3>
+      <p class="muted">hamelrhadiouini@gmail.com</p>
+      <div class="contact-actions">
+        <a class="btn link-btn" href="mailto:hamelrhadiouini@gmail.com">
+          Send Email <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- LinkedIn card -->
+    <article class="contact-card">
+      <div class="contact-icon">
+        <!-- LinkedIn icon -->
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6.94 8.5H4.13V20h2.81V8.5zM5.55 7.2a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2zM20 20h-2.8v-5.8c0-1.47-.02-3.35-2.04-3.35-2.06 0-2.37 1.6-2.37 3.25V20H10v-11.5h2.69v1.57h.04c.37-.69 1.28-1.42 2.64-1.42 2.83 0 3.36 1.86 3.36 4.27V20z" fill="white"/>
+        </svg>
+      </div>
+      <h3>LinkedIn</h3>
+      <p class="muted">Connect with me</p>
+      <div class="contact-actions">
+        <a class="btn link-btn" href="https://linkedin.com/in/elrhadiouini-hamza" target="_blank" rel="noopener">
+          Visit Profile <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </article>
+  </div>
+
+  <div class="contact-code-pill">&gt; ready_to_collaborate();</div>
+</section>
+
   </main>
 
   <footer class="site-footer">
@@ -149,7 +279,7 @@ Actuellement à la recherche d’un stage PFE 2026 avec une opportunité de pré
     </div>
   </footer>
 
-
+  <script src="assets/js/certifications.js"></script>
   <script src="assets/js/projects.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
