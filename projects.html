@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projets — Hamza ELRHADIOUINI</title>
+  <link rel="icon" href="assets/icons/favicon.ico">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav">
+      <a href="index.html" class="brand">Hamza&nbsp;ELRHADIOUINI</a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a class="btn" href="projects.html">Projets</a>
+        <a class="btn" href="certifications.html">Certifications</a>
+        <a class="btn" href="skills.html">Skills</a>
+        <a class="btn" href="contact.html">Contact</a>
+        <button class="btn theme" id="themeToggle">🌓</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="projets">
+    <h2>Projets</h2>
+
+    <div class="tabs card" role="tablist" aria-label="Catégories de projets">
+      <button class="tab active" data-category="" role="tab" aria-selected="true">Tous</button>
+      <button class="tab" data-category="professionnel" role="tab" aria-selected="false">Professionnels</button>
+      <button class="tab" data-category="personnel" role="tab" aria-selected="false">Personnels</button>
+    </div>
+
+    <div class="filterbar card">
+      <input id="searchInput" type="search" placeholder="Rechercher par titre, techno..." aria-label="Rechercher des projets">
+      <select id="techSelect" aria-label="Filtrer par techno">
+        <option value="">Toutes les technos</option>
+        <option>Java</option><option>Python</option><option>PHP</option><option>JavaScript</option>
+        <option>Spring Boot</option><option>React</option><option>Django</option><option>Laravel</option>
+        <option>MySQL</option><option>Azure</option><option>OpenAI API</option>
+      </select>
+      <select id="yearSelect" aria-label="Filtrer par année">
+        <option value="">Toutes les années</option>
+        <option>2026</option><option>2025</option><option>2024</option><option>2023</option>
+      </select>
+      <button id="clearFilters" class="btn">Réinitialiser</button>
+    </div>
+
+    <div id="projectGrid" class="cards"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><p class="muted">© <span id="year"></span> Hamza ELRHADIOUINI.</p></div>
+</footer>
+
+<script src="assets/js/projects.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -10,277 +10,64 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap">
-      <nav class="nav">
-        <a href="#" class="brand">Hamza&nbsp;ELRHADIOUINI</a>
-        <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
-        <div class="nav-links" id="navLinks">
-          <a href="#projets" class="btn">Projets</a>
-          <a class="btn" href="#certifications">Certifications</a>
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav">
+      <a href="index.html" class="brand">Hamza&nbsp;ELRHADIOUINI</a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a class="btn" href="projects.html">Projets</a>
+        <a class="btn" href="certifications.html">Certifications</a>
+        <a class="btn" href="skills.html">Skills</a>
+        <a class="btn" href="contact.html">Contact</a>
+        <button class="btn theme" id="themeToggle" title="Basculer thème">🌓</button>
+      </div>
+    </nav>
+  </div>
+</header>
 
-          <a href="#skills" class="btn">About</a>
-          <a href="#contact" class="btn">Contact</a>
-          <button class="btn theme" id="themeToggle" title="Basculer thème">🌓</button>
-        </div>
-      </nav>
+<main class="wrap">
+  <!-- HERO -->
+  <section class="hero" id="about">
+    <div>
+      <span class="badge">Salé, Maroc · Stage PFE 2026</span>
+      <h1>Full-stack & Cloud-native — je conçois des applis fiables et scalables.</h1>
+      <p class="lead">
+        Un ingénieur logiciel passionné spécialisé dans le développement web, créant des solutions innovantes et performantes.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="projects.html">Voir mes projets</a>
+        <a class="btn" href="assets/pdf/Hamza_Elrhadiouini_CV.pdf" target="_blank" rel="noopener">Voir mon CV</a>
+      </div>
     </div>
-  </header>
+    <figure class="avatar-card">
+      <img src="assets/img/profile.jpg.PNG" alt="Photo de Hamza ELRHADIOUINI" />
+      <figcaption>Ingénierie logicielle · MIAGE</figcaption>
+    </figure>
+  </section>
 
-  <main class="wrap">
-    <!-- HERO -->
-    <section class="hero" id="about">
-      <div>
-        <span class="badge">Salé, Maroc · Stage PFE 2026</span>
-        <h1>Full-stack & Cloud-native — je conçois des applis fiables et scalables.</h1>
-        <p class="lead">
-          Un ingénieur logiciel passionné spécialisé dans le développement web, créant des solutions innovantes et performantes.
-        </p>
-        <div class="cta">
-          <a class="btn primary" href="#projets">Voir mes projets</a>
-          <a class="btn" href="assets/pdf/Hamza_Elrhadiouini_CV.pdf" target="_blank" rel="noopener">Voir mon CV</a>
-        </div>
-      </div>
-      <figure class="avatar-card">
-        <img src="assets/img/profile.jpg.PNG" alt="Photo de Hamza ELRHADIOUINI" />
-        <figcaption>Ingénierie logicielle · MIAGE</figcaption>
-      </figure>
-    </section>
-
-    <!-- QUICK INFO -->
-    <section class="grid-2">
-      <article class="card">
-        <h2>Profil</h2>
-        <p class="muted">Étudiant en dernière année d’ingénierie en informatique et réseaux (option MIAGE) à l’EMSI Rabat, passionné
-par le développement full-stack et les architectures cloud-native. Solides compétences analytiques et esprit
-d’équipe, avec une capacité prouvée à concevoir des systèmes évolutifs et à livrer des solutions orientées valeur.
-Actuellement à la recherche d’un stage PFE 2026 avec une opportunité de pré-embauche afin de contribuer
-à des projets logiciels innovants.</p>
-        
-      </article>
-      
-    </section>
-
-<!-- PROJECTS -->
-<section id="projets">
-  <h2>Projets</h2>
-
-  <!-- Category segmented control -->
-  <div class="tabs card" role="tablist" aria-label="Catégories de projets">
-    <button class="tab active" data-category="" role="tab" aria-selected="true">Tous</button>
-    <button class="tab" data-category="professionnel" role="tab" aria-selected="false">Professionnels</button>
-    <button class="tab" data-category="personnel" role="tab" aria-selected="false">Personnels</button>
-  </div>
-
-  <!-- Filter bar -->
-  <div class="filterbar card">
-    <input id="searchInput" type="search" placeholder="Rechercher par titre, techno..." aria-label="Rechercher des projets">
-    <select id="techSelect" aria-label="Filtrer par techno">
-      <option value="">Toutes les technos</option>
-      <option>Java</option><option>Python</option><option>PHP</option><option>JavaScript</option>
-      <option>Spring Boot</option><option>React</option><option>Django</option><option>Laravel</option>
-      <option>MySQL</option><option>Azure</option><option>OpenAI API</option>
-    </select>
-    <select id="yearSelect" aria-label="Filtrer par année">
-      <option value="">Toutes les années</option>
-      <option>2026</option><option>2025</option><option>2024</option><option>2023</option>
-    </select>
-    <button id="clearFilters" class="btn">Réinitialiser</button>
-  </div>
-
-  <!-- Grid container (rendered by JS) -->
-  <div id="projectGrid" class="cards"></div>
-</section>
-
-
-
-<!-- CERTIFICATIONS -->
-<section id="certifications">
-  <h2>Certifications</h2>
-
-  <!-- Filter bar -->
-  <div class="filterbar card">
-    <input id="certSearch" type="search" placeholder="Rechercher (titre, organisme)..." aria-label="Rechercher des certifications">
-    <select id="providerSelect" aria-label="Filtrer par organisme">
-      <option value="">Tous les organismes</option>
-      <option>Meta</option><option>IBM</option><option>Oracle</option><option>Google</option>
-      <option>Whizlabs</option><option>University of Michigan</option><option>Johns Hopkins University</option>
-      <option>EPFL</option><option>UC Irvine</option><option>University of Pennsylvania</option>
-      <option>HKUST</option><option>Duke University</option><option>University of Colorado Boulder</option>
-      <option>École Polytechnique</option>
-    </select>
-    <button id="clearCerts" class="btn">Réinitialiser</button>
-  </div>
-
-  <!-- Grid rendered by JS -->
-  <div id="certGrid" class="cards"></div>
-</section>
-
-
-
-<!-- ABOUT & SKILLS -->
-<section id="skills">
-  <h2>Education</h2>
-
-  <!-- Education (two cards like your screenshot) -->
-  <div class="edu-grid">
-    <article class="card edu-card">
-      <div class="edu-head">
-        <span class="badge-square">E</span>
-        <div>
-          <h3 class="edu-title">EMSI Rabat</h3>
-          <p class="muted">Software Engineering (MIAGE)</p>
-        </div>
-      </div>
-      <p class="muted">2021 – Present</p>
-    </article>
-
-    <article class="card edu-card">
-      <div class="edu-head">
-        <span class="badge-square">B</span>
-        <div>
-          <h3 class="edu-title">Baccalauréat</h3>
-          <p class="muted">Physical Sciences</p>
-        </div>
-      </div>
-      <p class="muted">2020</p>
-    </article>
-  </div>
-
-
-
-<!-- SKILLS -->
-<section id="skills">
-  <h2>Skills</h2>
-
-  <div class="grid-3">
-    <!-- Technologies -->
+  <!-- Quick profile -->
+  <section class="grid-2">
     <article class="card">
-      <h3>Technologies</h3>
-
-      <h4 class="sub">Languages</h4>
-      <div class="chips">
-        <span class="chip">Java</span><span class="chip">JavaScript</span><span class="chip">PHP</span>
-        <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">C#</span><span class="chip">C++</span>
-      </div>
-
-      <h4 class="sub">Frameworks</h4>
-      <div class="chips">
-        <span class="chip">Spring Boot</span><span class="chip">React</span>
-        <span class="chip">Laravel</span><span class="chip">Symfony</span>
-        <span class="chip">Django</span><span class="chip">.NET</span>
-      </div>
-
-      <h4 class="sub">Databases</h4>
-      <div class="chips">
-        <span class="chip">MySQL</span><span class="chip">Oracle</span><span class="chip">MongoDB</span>
-      </div>
-
-      <h4 class="sub">Cloud & Tools</h4>
-      <div class="chips">
-        <span class="chip">Git/GitHub</span><span class="chip">Azure</span><span class="chip">Docker</span>
-        <span class="chip">CI/CD</span>
-      </div>
-
-      <h4 class="sub">Design & Methods</h4>
-      <div class="chips">
-        <span class="chip">UML</span><span class="chip">MVC</span>
-        <span class="chip">Design Patterns</span><span class="chip">Agile (Scrum)</span>
+      <h2>Profil</h2>
+      <p class="muted">
+        Étudiant en dernière année (MIAGE) à l’EMSI Rabat. Passionné par le full-stack et les architectures cloud-native.
+        À la recherche d’un <strong>stage PFE 2026</strong> avec possibilité de pré-embauche.
+      </p>
+      <div class="row">
+        <a class="btn" href="skills.html">Voir mes skills</a>
+        <a class="btn" href="certifications.html">Voir mes certifications</a>
       </div>
     </article>
+  </section>
+</main>
 
-    <!-- Soft Skills -->
-    <article class="card">
-      <h3>Soft Skills</h3>
-      <div class="chips soft">
-        <span class="chip">Problem-solving</span>
-        <span class="chip">Communication</span>
-        <span class="chip">Teamwork</span>
-        <span class="chip">Time management</span>
-        <span class="chip">Adaptability</span>
-        <span class="chip">Attention to detail</span>
-        <span class="chip">Critical thinking</span>
-        <span class="chip">Curiosity & learning</span>
-        <span class="chip">Documentation</span>
-        <span class="chip">Client focus</span>
-      </div>
-    </article>
+<footer class="site-footer">
+  <div class="wrap"><p class="muted">© <span id="year"></span> Hamza ELRHADIOUINI. Tous droits réservés.</p></div>
+</footer>
 
-    <!-- Languages (human) -->
-    <article class="card">
-      <h3>Languages</h3>
-      <ul class="lang-list">
-        <li><strong>Arabic</strong> — native</li>
-        <li><strong>French</strong> — fluent</li>
-        <li><strong>English</strong> — fluent</li>
-      </ul>
-    </article>
-  </div>
-</section>
-
-
-
-
-        
-  <!-- CONTACT -->
-<section id="contact" class="contact-hero">
-  <h2 class="contact-title">
-    Let’s <span class="accent">Work</span> Together
-  </h2>
-  <p class="contact-sub">
-    I’m currently seeking opportunities for my final-year internship (PFE).<br>
-    Feel free to reach out if you'd like to collaborate or have any questions.
-  </p>
-
-  <div class="contact-cards">
-    <!-- Email card -->
-    <article class="contact-card">
-      <div class="contact-icon">
-        <!-- Envelope icon -->
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M4 6h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zm0 0l8 6 8-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <h3>Email</h3>
-      <p class="muted">hamelrhadiouini@gmail.com</p>
-      <div class="contact-actions">
-        <a class="btn link-btn" href="mailto:hamelrhadiouini@gmail.com">
-          Send Email <span aria-hidden="true">→</span>
-        </a>
-      </div>
-    </article>
-
-    <!-- LinkedIn card -->
-    <article class="contact-card">
-      <div class="contact-icon">
-        <!-- LinkedIn icon -->
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M6.94 8.5H4.13V20h2.81V8.5zM5.55 7.2a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2zM20 20h-2.8v-5.8c0-1.47-.02-3.35-2.04-3.35-2.06 0-2.37 1.6-2.37 3.25V20H10v-11.5h2.69v1.57h.04c.37-.69 1.28-1.42 2.64-1.42 2.83 0 3.36 1.86 3.36 4.27V20z" fill="white"/>
-        </svg>
-      </div>
-      <h3>LinkedIn</h3>
-      <p class="muted">Connect with me</p>
-      <div class="contact-actions">
-        <a class="btn link-btn" href="https://linkedin.com/in/elrhadiouini-hamza" target="_blank" rel="noopener">
-          Visit Profile <span aria-hidden="true">→</span>
-        </a>
-      </div>
-    </article>
-  </div>
-
-  <div class="contact-code-pill">&gt; ready_to_collaborate();</div>
-</section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrap">
-      <p class="muted">© <span id="year"></span> Hamza ELRHADIOUINI. Tous droits réservés.</p>
-    </div>
-  </footer>
-
-  <script src="assets/js/certifications.js"></script>
-  <script src="assets/js/projects.js"></script>
-  <script src="assets/js/main.js"></script>
+<script src="assets/js/projects.js"></script>
+<script src="assets/js/certifications.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>

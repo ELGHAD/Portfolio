@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Certifications — Hamza ELRHADIOUINI</title>
+  <link rel="icon" href="assets/icons/favicon.ico">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav">
+      <a href="index.html" class="brand">Hamza&nbsp;ELRHADIOUINI</a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a class="btn" href="projects.html">Projets</a>
+        <a class="btn" href="certifications.html">Certifications</a>
+        <a class="btn" href="skills.html">Skills</a>
+        <a class="btn" href="contact.html">Contact</a>
+        <button class="btn theme" id="themeToggle">🌓</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="certifications">
+    <h2>Certifications</h2>
+
+    <div class="filterbar card">
+      <input id="certSearch" type="search" placeholder="Rechercher (titre, organisme)..." aria-label="Rechercher des certifications">
+      <select id="providerSelect" aria-label="Filtrer par organisme">
+        <option value="">Tous les organismes</option>
+        <option>Meta</option><option>IBM</option><option>Oracle</option><option>Google</option>
+        <option>Whizlabs</option><option>University of Michigan</option><option>Johns Hopkins University</option>
+        <option>EPFL</option><option>UC Irvine</option><option>University of Pennsylvania</option>
+        <option>HKUST</option><option>Duke University</option><option>University of Colorado Boulder</option>
+        <option>École Polytechnique</option>
+      </select>
+      <button id="clearCerts" class="btn">Réinitialiser</button>
+    </div>
+
+    <div id="certGrid" class="cards"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><p class="muted">© <span id="year"></span> Hamza ELRHADIOUINI.</p></div>
+</footer>
+
+<script src="assets/js/certifications.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
