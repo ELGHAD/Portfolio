@@ -215,3 +215,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   render(DATA); // initial
 })();
+
+
+// --- Compteurs animés sur la page d'accueil ---
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = {
+    certs: 27,
+    projects: 11,
+    tech: 15,
+  };
+
+  const duration = 1200; // durée animation (ms)
+
+  document.querySelectorAll(".num").forEach(el => {
+    const key = el.dataset.count;
+    const target = counters[key] || 0;
+    let start = 0;
+    const startTime = performance.now();
+
+    function update(now) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      el.textContent = Math.floor(progress * target);
+      if (progress < 1) requestAnimationFrame(update);
+      else el.textContent = target;
+    }
+    requestAnimationFrame(update);
+  });
+});

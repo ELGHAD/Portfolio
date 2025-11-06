@@ -26,43 +26,72 @@
 
 <main class="wrap">
   <!-- Contact hero reused -->
-  <section id="contact" class="contact-hero">
-    <h2 class="contact-title">Let’s <span class="accent">Work</span> Together</h2>
-    <p class="contact-sub">
-      I’m currently seeking opportunities for my final-year internship (PFE).<br>
-      Feel free to reach out if you'd like to collaborate or have any questions.
-    </p>
+  <!-- CONTACT -->
+<section id="contact" class="contact-hero v2">
+  <h2 class="contact-title">
+    Let’s <span class="accent">Work</span> Together
+  </h2>
+  <p class="contact-sub">
+    I’m currently seeking opportunities for my final-year internship (PFE).<br>
+    Feel free to reach out if you'd like to collaborate or have any questions.
+  </p>
 
-    <div class="contact-cards">
-      <article class="contact-card">
-        <div class="contact-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M4 6h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zm0 0l8 6 8-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <h3>Email</h3>
-        <p class="muted">hamelrhadiouini@gmail.com</p>
-        <div class="contact-actions">
-          <a class="btn link-btn" href="mailto:hamelrhadiouini@gmail.com">Send Email →</a>
-        </div>
-      </article>
+  <div class="contact-grid">
+    <!-- Email -->
+    <article class="contact-card v2">
+      <div class="contact-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 6h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zm0 0l8 6 8-6"
+                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>Email</h3>
+      <p class="muted">hamelrhadiouini@gmail.com</p>
+      <a class="btn ghost accent-link" href="mailto:hamelrhadiouini@gmail.com">
+        Send Email <span aria-hidden="true">→</span>
+      </a>
+    </article>
 
-      <article class="contact-card">
-        <div class="contact-icon">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M6.94 8.5H4.13V20h2.81V8.5zM5.55 7.2a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2zM20 20h-2.8v-5.8c0-1.47-.02-3.35-2.04-3.35-2.06 0-2.37 1.6-2.37 3.25V20H10v-11.5h2.69v1.57h.04c.37-.69 1.28-1.42 2.64-1.42 2.83 0 3.36 1.86 3.36 4.27V20z" fill="white"/>
-          </svg>
-        </div>
-        <h3>LinkedIn</h3>
-        <p class="muted">Connect with me</p>
-        <div class="contact-actions">
-          <a class="btn link-btn" href="https://linkedin.com/in/elrhadiouini-hamza" target="_blank" rel="noopener">Visit Profile →</a>
-        </div>
-      </article>
-    </div>
+    <!-- LinkedIn -->
+    <article class="contact-card v2">
+      <div class="contact-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6.94 8.5H4.13V20h2.81V8.5zM5.55 7.2a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2zM20 20h-2.8v-5.8
+                   c0-1.47-.02-3.35-2.04-3.35-2.06 0-2.37 1.6-2.37 3.25V20H10V8.5h2.69v1.57h.04c.37-.69 1.28-1.42 2.64-1.42
+                   2.83 0 3.36 1.86 3.36 4.27V20z" fill="white"/>
+        </svg>
+      </div>
+      <h3>LinkedIn</h3>
+      <p class="muted">Connect with me</p>
+      <a class="btn ghost accent-link" href="https://linkedin.com/in/elrhadiouini-hamza" target="_blank" rel="noopener">
+        Visit Profile <span aria-hidden="true">→</span>
+      </a>
+    </article>
 
-    <div class="contact-code-pill">&gt; ready_to_collaborate();</div>
-  </section>
+    <!-- (Optionnel) GitHub — décommente si tu veux un 3e bloc
+    <article class="contact-card v2">
+      <div class="contact-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 .5a11.5 11.5 0 0 0-3.64 22.42c.58.11.79-.25.79-.56v-2.03c-3.22.7-3.9-1.54-3.9-1.54
+                   -.53-1.35-1.3-1.71-1.3-1.71-1.07-.74.08-.72.08-.72 1.18.08 1.8 1.21 1.8 1.21 1.05 1.8 2.76 1.28 3.43.98
+                   .11-.78.41-1.28.75-1.58-2.57-.29-5.27-1.29-5.27-5.73 0-1.27.46-2.31 1.21-3.12-.12-.3-.52-1.5.11-3.13 0 0
+                   .97-.31 3.18 1.19a11.05 11.05 0 0 1 5.8 0c2.21-1.5 3.18-1.19 3.18-1.19.63 1.63.23 2.83.11 3.13.75.81 1.21
+                   1.85 1.21 3.12 0 4.45-2.71 5.44-5.3 5.72.42.36.8 1.07.8 2.17v3.22c0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .5Z"
+                fill="white"/>
+        </svg>
+      </div>
+      <h3>GitHub</h3>
+      <p class="muted">Explore my code</p>
+      <a class="btn ghost accent-link" href="https://github.com/ELGHAD" target="_blank" rel="noopener">
+        View Repos <span aria-hidden="true">→</span>
+      </a>
+    </article>
+    -->
+  </div>
+
+  <div class="contact-code-pill">&gt; ready_to_collaborate();</div>
+</section>
+
 </main>
 
 <footer class="site-footer">
