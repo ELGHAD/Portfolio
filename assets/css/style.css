@@ -1950,3 +1950,19 @@ body {
   border: 1px solid rgba(3, 71, 44, 0.9);
   color: #dff7ec;
 }
+
+:root {
+  color-scheme: dark;
+}
+
+html, body {
+  background-color: #000 !important;
+}
+
+.gradient-bg {
+  background: radial-gradient(
+    circle at top,
+    rgba(0, 80, 60, 0.25),
+    rgba(0, 0, 0, 1)
+  );
+}
