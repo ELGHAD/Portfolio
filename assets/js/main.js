@@ -164,41 +164,53 @@ document.addEventListener("DOMContentLoaded", () => {
 /* ===============================
    Certifications: render + filters
 =================================*/
-(function(){
-  const grid = document.getElementById('certGrid');
-  const search = document.getElementById('certSearch');
-  const provider = document.getElementById('providerSelect');
-  const clear = document.getElementById('clearCerts');
-  const DATA = (window.CERTS || []);
+(function () {
+  const grid = document.getElementById("certGrid");
+  const search = document.getElementById("certSearch");
+  const provider = document.getElementById("providerSelect");
+  const clear = document.getElementById("clearCerts");
+  const DATA = window.CERTS || [];
 
   if (!grid) return;
 
-  const norm = s => (s||'').toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu,'');
+  const norm = (s) =>
+    (s || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/\p{Diacritic}/gu, "");
 
-  const card = c => `
+  const card = (c) => `
     <article class="card cert" data-provider="${c.provider}">
       <h3>${c.title}</h3>
       <p class="muted">${c.provider}${c.grade ? ` — Note : ${c.grade}` : ""}</p>
       <div class="row">
-        ${c.links?.verify ? `<a class="btn" href="${c.links.verify}" target="_blank" rel="noopener">Vérifier</a>` : ""}
-        ${c.links?.pdf ? `<a class="btn" href="${c.links.pdf}" target="_blank" rel="noopener">Voir PDF</a>` : ""}
+        ${
+          c.links?.verify
+            ? `<a class="btn" href="${c.links.verify}" target="_blank" rel="noopener">Vérifier</a>`
+            : ""
+        }
+        ${
+          c.links?.pdf
+            ? `<a class="btn" href="${c.links.pdf}" target="_blank" rel="noopener">Voir PDF</a>`
+            : ""
+        }
       </div>
     </article>
   `;
 
-  function render(list){
+  function render(list) {
     if (!list.length) {
       grid.innerHTML = `<div class="card"><p class="muted">Aucune certification trouvée.</p></div>`;
       return;
     }
-    grid.innerHTML = list.map(card).join('');
+    grid.innerHTML = list.map(card).join("");
   }
 
-  function apply(){
-    const q = norm(search?.value || '');
-    const p = norm(provider?.value || '');
+  function apply() {
+    const q = norm(search?.value || "");
+    const p = norm(provider?.value || "");
 
-    const filtered = DATA.filter(c => {
+    const filtered = DATA.filter((c) => {
       const t = norm(c.title);
       const prov = norm(c.provider);
       const matchText = !q || t.includes(q) || prov.includes(q);
@@ -209,36 +221,136 @@ document.addEventListener("DOMContentLoaded", () => {
     render(filtered);
   }
 
-  search?.addEventListener('input', apply);
-  provider?.addEventListener('change', apply);
-  clear?.addEventListener('click', () => { if (search) search.value=''; if (provider) provider.value=''; apply(); });
+  search?.addEventListener("input", apply);
+  provider?.addEventListener("change", apply);
+  clear?.addEventListener("click", () => {
+    if (search) search.value = "";
+    if (provider) provider.value = "";
+    apply();
+  });
 
   render(DATA); // initial
 })();
-
-
+// --- Compteurs animés sur la page d'accueil ---
 // --- Compteurs animés sur la page d'accueil ---
 document.addEventListener("DOMContentLoaded", () => {
+  // Projets
+  const totalProjects = Array.isArray(window.PROJECTS)
+    ? window.PROJECTS.length
+    : 0;
+
+  // Techs uniques
+  const techSet = new Set();
+  if (Array.isArray(window.PROJECTS)) {
+    window.PROJECTS.forEach((p) => {
+      (p.tech || []).forEach((t) => techSet.add(t));
+    });
+  }
+  const totalTech = techSet.size;
+
+  // ✅ Certifications : accepte CERTIFICATIONS OU CERTS
+  const certArray =
+    (Array.isArray(window.CERTIFICATIONS) && window.CERTIFICATIONS) ||
+    (Array.isArray(window.CERTS) && window.CERTS) ||
+    [];
+  const totalCerts = certArray.length;
+
   const counters = {
-    certs: 27,
-    projects: 11,
-    tech: 15,
+    certs: totalCerts || 0,
+    projects: totalProjects || 0,
+    tech: totalTech || 0,
   };
 
   const duration = 1200; // durée animation (ms)
 
-  document.querySelectorAll(".num").forEach(el => {
-    const key = el.dataset.count;
+  document.querySelectorAll(".num").forEach((el) => {
+    const key = el.dataset.count; // "certs" | "projects" | "tech"
     const target = counters[key] || 0;
-    let start = 0;
     const startTime = performance.now();
 
     function update(now) {
       const progress = Math.min((now - startTime) / duration, 1);
       el.textContent = Math.floor(progress * target);
-      if (progress < 1) requestAnimationFrame(update);
-      else el.textContent = target;
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        el.textContent = target;
+      }
     }
+
     requestAnimationFrame(update);
   });
+});
+
+// ==================================================
+// Scroll reveal + animation des compteurs de la home
+// ==================================================
+document.addEventListener("DOMContentLoaded", () => {
+  const revealEls = document.querySelectorAll(".reveal");
+  const statsSection = document.querySelector(".stats");
+  const numEls = document.querySelectorAll(".stats .num");
+
+  // Valeurs cibles des compteurs
+  const counterTargets = {
+    certs: 39,
+    projects: 20,
+    tech: 30
+  };
+
+  let countersStarted = false;
+
+  function animateCounters() {
+    if (countersStarted) return;
+    countersStarted = true;
+
+    numEls.forEach(numEl => {
+      const key = numEl.getAttribute("data-count");
+      const target = counterTargets[key] || 0;
+      const duration = 1200; // ms
+      const startTime = performance.now();
+
+      function update(now) {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const value = Math.floor(progress * target);
+        numEl.textContent = value + "";
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          numEl.textContent = target + ""; // assure la valeur finale exacte
+        }
+      }
+
+      requestAnimationFrame(update);
+    });
+  }
+
+  // IntersectionObserver pour révéler + démarrer les compteurs
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+
+            // Si c'est la section stats qui devient visible -> lancer les compteurs
+            if (entry.target === statsSection) {
+              animateCounters();
+            }
+
+            obs.unobserve(entry.target); // on anime chaque élément une seule fois
+          }
+        });
+      },
+      {
+        threshold: 0.15
+      }
+    );
+
+    revealEls.forEach(el => observer.observe(el));
+  } else {
+    // Fallback pour vieux navigateurs : tout visible + comptes directement
+    revealEls.forEach(el => el.classList.add("visible"));
+    animateCounters();
+  }
 });

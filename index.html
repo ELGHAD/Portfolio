@@ -7,83 +7,97 @@
   <meta name="description" content="Portfolio de Hamza ELRHADIOUINI — Étudiant ingénieur MIAGE, développement full-stack & cloud.">
   <link rel="icon" href="assets/icons/favicon.ico">
   <link rel="preload" as="image" href="assets/img/profile.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <header class="site-header">
   <div class="wrap">
     <nav class="nav">
-      <a href="index.html" class="brand">Hamza&nbsp;ELRHADIOUINI</a>
+      <a href="index.html" class="brand">ELGH4D</a>
       <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
-      <div class="nav-links" id="navLinks">
-        <a class="btn" href="projects.html">Projets</a>
-        <a class="btn" href="certifications.html">Certifications</a>
-        <a class="btn" href="skills.html">Competences</a>
-        <a class="btn" href="contact.html">Contact</a>
-        <button class="btn theme" id="themeToggle" title="Basculer thème">🌓</button>
-      </div>
+   <div class="nav-links" id="navLinks">
+  <a class="btn" href="about.html">À propos</a>
+  <a class="btn" href="projects.html">Projets</a>
+  <a class="btn" href="certifications.html">Certifications</a>
+  <a class="btn" href="skills.html">Compétences</a>
+  <a class="btn" href="contact.html">Contact</a>
+  
+</div>
+
     </nav>
   </div>
 </header>
 
 
 <main class="wrap">
-  <!-- SECTION D'ACCUEIL -->
-  <section class="hero-home">
-    <div class="hero-grid">
-      <div class="hero-text">
-        <p class="overline">BIENVENUE SUR MON PORTFOLIO</p>
-        <h1 class="xxl">
-          Je suis<br>
-          <span class="accent">Hamza Elrhadiouini</span>
-        </h1>
-        <p class="lead">
-          Ingénieur logiciel passionné, spécialisé en développement web full-stack et cloud.
-          Je conçois des solutions innovantes, performantes et scalables.
-        </p>
+<section class="hero-home">
+  <div class="hero-grid">
+    <div class="hero-text reveal">
+      <p class="overline">ÉTUDIANT INGÉNIEUR — PASSIONNÉ PAR LA CRÉATION DE SOLUTIONS DIGITALES</p>
 
-<div class="hero-actions">
-  <div class="social-links">
-    <a class="btn icon" href="https://github.com/ELGHAD" target="_blank" rel="noopener">
-      💻 GitHub
-    </a>
-    <a class="btn icon" href="https://linkedin.com/in/elrhadiouini-hamza" target="_blank" rel="noopener">
-      in LinkedIn
-    </a>
-    <a class="btn icon" href="mailto:hamelrhadiouini@gmail.com">
-      ✉️ Email
-    </a>
-  </div>
+      <h1 class="xxl">
+        Je suis<br>
+        <span class="accent">Hamza Elrhadiouini</span>
+      </h1>
 
+      <p class="lead">
+        Étudiant ingénieur en dernière année, je conçois des applications web modernes,
+        fiables et centrées sur l’utilisateur. J’aime transformer une idée en un produit
+        fonctionnel, clair et bien pensé.
+        <br><br>
+        Je recherche un <strong>stage de fin d’études (PFE 2026)</strong> où je pourrai évoluer,
+        contribuer à de vrais projets et apporter de la valeur au sein d’une équipe.
+      </p>
 
-</div>
-
-
-        <div class="cta-hero">
-          <a class="btn primary big" href="assets/pdf/Hamza_Elrhadiouini_CV.pdf" target="_blank" rel="noopener">⬇️ Télécharger le CV</a>
-        </div>
-
-        <div class="stats">
-          <div class="stat">
-            <div class="num" data-count="certs">0</div>
-            <div class="label">CERTIFICATIONS</div>
-          </div>
-          <div class="stat">
-            <div class="num" data-count="projects">0</div>
-            <div class="label">PROJETS</div>
-          </div>
-          <div class="stat">
-            <div class="num" data-count="tech">0</div>
-            <div class="label">TECHNOLOGIES</div>
-          </div>
+      <div class="hero-actions">
+        <div class="social-links">
+          <a class="btn icon" href="https://github.com/ELGHAD" target="_blank" rel="noopener">
+             GitHub
+          </a>
+          <a class="btn icon" href="https://www.linkedin.com/in/elrhadiouini-hamza-64ba04202/" target="_blank" rel="noopener">
+             LinkedIn  
+          </a>
+          <a class="btn icon" href="mailto:hamelrhadiouini@gmail.com">
+             Email 
+          </a>
         </div>
       </div>
 
-      <figure class="hero-photo">
-        <img src="assets/img/profile.jpg.PNG" alt="Photo de Hamza Elrhadiouini">
-      </figure>
+      <div class="cta-hero">
+        <a class="btn primary big" href="assets/pdf/Hamza_ELRHADIOUINI_StagePFE_FR_2026.pdf" target="_blank" rel="noopener">
+           Télécharger le CV 
+        </a>
+      </div>
+    </div> <!-- fin .hero-text -->
+
+    <figure class="hero-photo reveal">
+      <img src="assets/img/profile.jpg.PNG" alt="Photo de Hamza Elrhadiouini">
+    </figure>
+  </div> <!-- fin .hero-grid -->
+
+  <!-- Stats en bas, animées -->
+  <div class="stats reveal">
+    <div class="stat">
+      <div class="num" data-count="certs">0</div>
+      <div class="label">CERTIFICATIONS</div>
     </div>
-  </section>
+    <div class="stat">
+      <div class="num" data-count="projects">0</div>
+      <div class="label">PROJETS RÉALISÉS</div>
+    </div>
+    <div class="stat">
+      <div class="num" data-count="tech">0</div>
+      <div class="label">COMPÉTENCES</div>
+    </div>
+  </div>
+</section>
+
+
+
+
 </main>
 
 

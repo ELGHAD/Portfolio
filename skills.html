@@ -11,14 +11,15 @@
 <header class="site-header">
   <div class="wrap">
     <nav class="nav">
-      <a href="index.html" class="brand">Hamza&nbsp;ELRHADIOUINI</a>
+      <a href="index.html" class="brand">ELGH4D</a>
       <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
       <div class="nav-links" id="navLinks">
+        <a class="btn" href="about.html">À propos</a>
         <a class="btn" href="projects.html">Projets</a>
         <a class="btn" href="certifications.html">Certifications</a>
-        <a class="btn" href="skills.html">Skills</a>
+        <a class="btn" href="skills.html">Compétences</a>
         <a class="btn" href="contact.html">Contact</a>
-        <button class="btn theme" id="themeToggle">🌓</button>
+        
       </div>
     </nav>
   </div>
@@ -26,65 +27,187 @@
 
 <main class="wrap">
   <section id="skills">
-    <h2>Education</h2>
-    <div class="edu-grid">
-      <article class="card edu-card">
-        <div class="edu-head">
-          <span class="badge-square">E</span>
-          <div><h3 class="edu-title">EMSI Rabat</h3><p class="muted">Software Engineering (MIAGE)</p></div>
+    <div class="skills-panel">
+      <!-- Header -->
+      <header class="skills-header reveal">
+        <div>
+          <p class="overline">Profil</p>
+          <h2 class="skills-title-main">Parcours & Compétences</h2>
+          <p class="skills-intro">
+            Étudiant ingénieur en génie logiciel (MIAGE) avec un fort focus sur le
+            développement full-stack, le cloud et les bonnes pratiques de conception
+            (architectures en couches, API REST, microservices, CI/CD).
+          </p>
         </div>
-        <p class="muted">2021 – Present</p>
-      </article>
-      <article class="card edu-card">
-        <div class="edu-head">
-          <span class="badge-square">B</span>
-          <div><h3 class="edu-title">Baccalauréat</h3><p class="muted">Physical Sciences</p></div>
+        <div class="skills-tag">
+          <span>Genie logiciel</span>
         </div>
-        <p class="muted">2020</p>
-      </article>
-    </div>
+      </header>
 
-    <h2>Skills</h2>
-    <div class="grid-3">
-      <article class="card">
-        <h3>Technologies</h3>
-        <h4 class="sub">Languages</h4>
-        <div class="chips">
-          <span class="chip">Java</span><span class="chip">JavaScript</span><span class="chip">PHP</span>
-          <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">C#</span><span class="chip">C++</span>
-        </div>
-        <h4 class="sub">Frameworks</h4>
-        <div class="chips">
-          <span class="chip">Spring Boot</span><span class="chip">React</span>
-          <span class="chip">Laravel</span><span class="chip">Symfony</span>
-          <span class="chip">Django</span><span class="chip">.NET</span>
-        </div>
-        <h4 class="sub">Databases</h4>
-        <div class="chips"><span class="chip">MySQL</span><span class="chip">Oracle</span><span class="chip">MongoDB</span></div>
-        <h4 class="sub">Cloud & Tools</h4>
-        <div class="chips"><span class="chip">Git/GitHub</span><span class="chip">Azure</span><span class="chip">Docker</span><span class="chip">CI/CD</span></div>
-        <h4 class="sub">Design & Methods</h4>
-        <div class="chips"><span class="chip">UML</span><span class="chip">MVC</span><span class="chip">Design Patterns</span><span class="chip">Agile (Scrum)</span></div>
-      </article>
+      <!-- Top row: Education + Languages -->
+      <div class="skills-top">
+        <div class="reveal">
+          <h3 class="skills-subheading angle">Parcours académique</h3>
+          <br>
+          <div class="edu-grid">
+            <article class="card edu-card">
+              <div class="edu-head">
+              
+                <div>
+                  <h3 class="edu-title">Cycle d’ingénierie en informatique et réseaux (Option MIAGE)</h3>
+                  <p class="muted">EMSI, Rabat</p>
+                </div>
+              </div>
+              <p class="muted">2023 – Présent</p>
+            </article>
+<br>
+            <article class="card edu-card">
+              <div class="edu-head">
+               
+                <div>
+                  <h3 class="edu-title">Années préparatoires intégrées</h3>
+                  <p class="muted">Ingénierie Informatique, Industrielle et Automatisme — EMSI, Rabat</p>
+                </div>
+              </div>
+              <p class="muted">2021 – 2023</p>
+            </article>
+            <br>
 
-      <article class="card">
-        <h3>Soft Skills</h3>
-        <div class="chips soft">
-          <span class="chip">Problem-solving</span><span class="chip">Communication</span><span class="chip">Teamwork</span>
-          <span class="chip">Time management</span><span class="chip">Adaptability</span><span class="chip">Attention to detail</span>
-          <span class="chip">Critical thinking</span><span class="chip">Curiosity & learning</span><span class="chip">Documentation</span>
-          <span class="chip">Client focus</span>
+            <article class="card edu-card">
+              <div class="edu-head">
+               
+                <div>
+                  <h3 class="edu-title">Baccalauréat Sciences Physiques</h3>
+                  <p class="muted">Lycée Al Maârif, Salé</p>
+                </div>
+              </div>
+              <p class="muted">2020 – 2021</p>
+            </article>
+          </div>
         </div>
-      </article>
+        <br>
 
-      <article class="card">
-        <h3>Languages</h3>
-        <ul class="lang-list">
-          <li><strong>Arabic</strong> — native</li>
-          <li><strong>French</strong> — fluent</li>
-          <li><strong>English</strong> — fluent</li>
-        </ul>
-      </article>
+        <article class="card langs-card reveal">
+          <h3>Langues</h3>
+          <ul class="lang-list">
+            <li><strong>Arabe</strong> — langue maternelle</li>
+            <li><strong>Français</strong> — courant</li>
+            <li><strong>Anglais</strong> — courant</li>
+          </ul>
+        </article>
+      </div>
+<br>
+      <!-- Technical stack -->
+      <h3 class="skills-subheading angle reveal">Compétences techniques</h3>
+      <br>
+      <div class="skills-tech-grid">
+        <article class="card reveal">
+          <h3>Stack de développement</h3>
+
+          <h4 class="sub">Langages</h4>
+          <div class="chips">
+            <span class="chip">Java</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">PHP</span>
+            <span class="chip">Python</span>
+            <span class="chip">C#</span>
+            <span class="chip">C++</span>
+            <span class="chip">SQL</span>
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">Kotlin</span>
+          </div>
+
+          <h4 class="sub">Frameworks & plateformes</h4>
+          <div class="chips">
+            <!-- Java / Spring -->
+            <span class="chip">Spring Boot</span>
+            <span class="chip">Spring MVC</span>
+            <span class="chip">Spring Data JPA</span>
+            <span class="chip">Spring Security</span>
+
+            <!-- Front-end -->
+            <span class="chip">React</span>
+            <span class="chip">Next.js</span>
+            <span class="chip">Tailwind CSS</span>
+
+            <!-- PHP -->
+            <span class="chip">Laravel</span>
+            <span class="chip">Symfony</span>
+
+            <!-- Python -->
+            <span class="chip">Django</span>
+
+            <!-- .NET / Mobile / Node -->
+            <span class="chip">ASP.NET Core</span>
+            <span class="chip">.NET</span>
+            <span class="chip">Android (SDK)</span>
+            <span class="chip">Node.js</span>
+          </div>
+
+          <h4 class="sub">Bases de données</h4>
+          <div class="chips">
+            <span class="chip">MySQL</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">SQL Server</span>
+            <span class="chip">Oracle 19c</span>
+            <span class="chip">MongoDB</span>
+          </div>
+
+          <h4 class="sub">Cloud, DevOps & outils</h4>
+          <div class="chips">
+            <span class="chip">Git</span>
+            <span class="chip">GitHub</span>
+            <span class="chip">Docker</span>
+            <span class="chip">CI/CD (GitHub Actions, Azure)</span>
+            <span class="chip">Microsoft Azure</span>
+            <span class="chip">Oracle Cloud</span>
+            <span class="chip">Linux</span>
+            <span class="chip">Postman</span>
+            <span class="chip">Swagger / OpenAPI</span>
+            <span class="chip">IntelliJ IDEA</span>
+            <span class="chip">VS Code</span>
+            <span class="chip">Visual Studio</span>
+          </div>
+
+          <h4 class="sub">Architecture & méthodes</h4>
+          <div class="chips">
+            <span class="chip">API REST</span>
+            <span class="chip">Microservices</span>
+            <span class="chip">Architecture en couches</span>
+            <span class="chip">DTO & Mappers</span>
+            <span class="chip">UML</span>
+            <span class="chip">MVC</span>
+            <span class="chip">Design Patterns</span>
+            <span class="chip">Clean Code</span>
+            <span class="chip">Agile (Scrum)</span>
+            <span class="chip">Tests & TDD</span>
+          </div>
+        </article>
+
+        <article class="card soft-card reveal">
+          <h3>Soft skills</h3>
+          <p class="muted">
+            Compétences humaines qui soutiennent le travail en équipe, la communication
+            avec les clients et la qualité des livrables.
+          </p>
+          <div class="chips soft">
+            <span class="chip">Problem-solving</span>
+            <span class="chip">Communication</span>
+            <span class="chip">Travail en équipe</span>
+            <span class="chip">Gestion du temps</span>
+            <span class="chip">Adaptabilité</span>
+            <span class="chip">Sens du détail</span>
+            <span class="chip">Esprit critique</span>
+            <span class="chip">Apprentissage continu</span>
+            <span class="chip">Documentation</span>
+            <span class="chip">Orientation client</span>
+            <span class="chip">Autonomie</span>
+            <span class="chip">Esprit d’initiative</span>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 </main>

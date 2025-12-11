@@ -11,25 +11,46 @@
 <header class="site-header">
   <div class="wrap">
     <nav class="nav">
-      <a href="index.html" class="brand">Hamza&nbsp;ELRHADIOUINI</a>
+      <a href="index.html" class="brand">ELGH4D</a>
       <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
       <div class="nav-links" id="navLinks">
+        <a class="btn" href="about.html">À propos</a>
         <a class="btn" href="projects.html">Projets</a>
         <a class="btn" href="certifications.html">Certifications</a>
-        <a class="btn" href="skills.html">Skills</a>
+        <a class="btn" href="skills.html">Compétences</a>
         <a class="btn" href="contact.html">Contact</a>
-        <button class="btn theme" id="themeToggle">🌓</button>
+        
       </div>
     </nav>
   </div>
 </header>
 
 <main class="wrap">
-  <section id="certifications">
-    <h2>Certifications</h2>
+  <section id="certifications" class="certifications-page">
+    <header class="cert-header reveal">
+      <div>
+       
+        <h1 class="cert-title">Certifications</h1>
+        <p class="cert-sub">
+          Un ensemble de certifications techniques qui consolident mon profil
+          de développeur full-stack et cloud, entre développement, bases de
+          données, DevOps et bonnes pratiques d’ingénierie.
+        </p>
+      </div>
 
-    <div class="filterbar card">
-      <input id="certSearch" type="search" placeholder="Rechercher (titre, organisme)..." aria-label="Rechercher des certifications">
+      <div class="cert-tag">
+        <div class="cert-pill">
+        
+          <span class="cert-pill-inner">CERTIFICATIONS VALIDÉES</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="filterbar card cert-filterbar reveal">
+      <input id="certSearch" type="search"
+             placeholder="Rechercher (titre, organisme)..."
+             aria-label="Rechercher des certifications">
+
       <select id="providerSelect" aria-label="Filtrer par organisme">
         <option value="">Tous les organismes</option>
         <option>Meta</option><option>IBM</option><option>Oracle</option><option>Google</option>
@@ -38,10 +59,11 @@
         <option>HKUST</option><option>Duke University</option><option>University of Colorado Boulder</option>
         <option>École Polytechnique</option>
       </select>
-      <button id="clearCerts" class="btn">Réinitialiser</button>
+
+      <button id="clearCerts" class="btn ghost">Réinitialiser</button>
     </div>
 
-    <div id="certGrid" class="cards"></div>
+    <div id="certGrid" class="cards cert-grid reveal"></div>
   </section>
 </main>
 
